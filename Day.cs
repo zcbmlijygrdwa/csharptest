@@ -4,7 +4,7 @@ using static MetaData;
 
 public class Day
 {
-    MetaData data;
+    public MetaData data;
     // Constructor that takes no arguments:
     public Day()
     {
