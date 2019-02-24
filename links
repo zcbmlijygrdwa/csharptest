@@ -1,3 +1,6 @@
 
 RaycastHit.collider
 https://docs.unity3d.com/ScriptReference/RaycastHit-collider.html
+
+Making an object detect being hit by a raycast
+https://answers.unity.com/questions/551624/making-an-object-detect-being-hit-by-a-raycast.html
