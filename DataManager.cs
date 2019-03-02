@@ -47,7 +47,17 @@ public class DataManager
 
     public MetaData getData(int mv, int y, int m, int d)
     {
-        return ((Day)(MovieObjs[mv].YearObjs[y-startYear].MonthObjs[m-startMonth].dayList[d-1])).data;
+        MetaData output = null;
+        try
+        {
+            output = ((Day)(MovieObjs[mv].YearObjs[y-startYear].MonthObjs[m-startMonth].dayList[d-1])).data;
+        }
+        catch(System.Exception e)
+        {
+            System.Console.WriteLine("DataManager error getData, error: "+e);
+        }
+
+        return output;
     }
 
     public void printInfo()

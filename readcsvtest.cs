@@ -1,6 +1,9 @@
 
 //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time
 
+
+//  mcs -out:readcsvtest.exe readcsvtest.cs DataManager.cs Movie.cs MetaData.cs Year.cs Month.cs Day.cs
+
 using System;
 
 using static DataManager;
@@ -60,15 +63,15 @@ public class HelloWorld
         {
             line = System.Console.ReadLine();  
             System.Console.WriteLine("your input: "+line);
-            try
+            int[] splits = parseLine(line);
+            MetaData mt = dm.getData(splits[0],splits[1],splits[2],splits[3]); 
+            if(mt!=null)
             {
-                int[] splits = parseLine(line);
-                MetaData mt = dm.getData(splits[0],splits[1],splits[2],splits[3]); 
                 System.Console.WriteLine("you are checking movie["+splits[0]+"at year["+splits[1]+"] mon["+splits[2]+"] day["+splits[3]+"], borrows = "+mt.borrows);
             }
-            catch(System.Exception e)
+            else
             {
-                System.Console.WriteLine("Invalid input");
+                System.Console.WriteLine("wrong input");
             }
         }
     }
